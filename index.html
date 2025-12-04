@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <title>テトリス風ゲーム</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="css/tetris.css" />
+  </head>
+  <body>
+    <main class="page">
+      <h1 class="title">テトリス風ゲーム</h1>
+
+      <section class="game-area">
+        <div class="board-card">
+          <!-- canvas の width/height は数値にする（pxを入れない） -->
+          <canvas id="stage" width="200" height="400" aria-label="テトリスステージ"></canvas>
+        </div>
+
+        <aside class="side-panel">
+          <div class="panel-card">
+            <div class="next-wrap">
+              <div class="panel-title">NEXT</div>
+              <canvas id="next" width="120" height="120" aria-label="次のブロック"></canvas>
+            </div>
+
+            <div class="stats">
+              <div>LINES <span id="lines">0</span></div>
+              <div>SCORE <span id="score">0</span></div>
+              <div>LEVEL <span id="level">1</span></div>
+              <div class="message" id="message">&nbsp;</div>
+            </div>
+
+            <div class="controls">
+              <button id="btn-pause" class="btn">Pause</button>
+              <button id="btn-restart" class="btn">Restart</button>
+            </div>
+
+            <div class="mobile-controller" role="group" aria-label="mobile controls">
+              <button id="tetris-move-left-button" class="control-btn">←</button>
+              <button id="tetris-rotate-button" class="control-btn">↻</button>
+              <button id="tetris-fall-button" class="control-btn">↓</button>
+              <button id="tetris-move-right-button" class="control-btn">→</button>
+            </div>
+
+            <div class="hint">キーボード: ← → 回転: ↑ 落下: ↓ / スペース: 即落下</div>
+          </div>
+        </aside>
+      </section>
+    </main>
+
+    <script type="module" src="js/tetris.js"></script>
+  </body>
+</html>
