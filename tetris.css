@@ -1,0 +1,182 @@
+/* base */
+:root{
+  --bg:#0b0b0d;
+  --card:#161619;
+  --accent:#1fb6ff;
+  --muted:#9aa0a6;
+  --white:#ffffff;
+  --panel:#222228;
+  --btn:#2b2f35;
+  --btn-active:#1b9bf0;
+}
+
+*{box-sizing:border-box}
+html{touch-action: manipulation}
+body{
+  margin:0;
+  font-family: "Segoe UI", Roboto, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+  background: linear-gradient(180deg,#050505 0%, #0d0d0f 100%);
+  color:var(--white);
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:24px;
+}
+
+/* page */
+.page{
+  width:100%;
+  max-width:980px;
+}
+
+/* title */
+.title{
+  text-align:center;
+  margin:0 0 16px;
+  font-size:1.6rem;
+  letter-spacing:1px;
+  color:var(--white);
+}
+
+/* layout */
+.game-area{
+  display:flex;
+  gap:16px;
+  align-items:flex-start;
+  justify-content:center;
+  flex-wrap:wrap;
+}
+
+/* board card */
+.board-card{
+  background:var(--card);
+  padding:12px;
+  border-radius:12px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.6);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+/* canvas styling */
+#stage{
+  background:#000;
+  display:block;
+  border-radius:6px;
+  width:200px;
+  height:400px;
+  image-rendering: pixelated;
+  box-shadow: inset 0 0 0 2px rgba(255,255,255,0.02);
+}
+
+/* side panel */
+.side-panel{
+  display:flex;
+  align-items:flex-start;
+}
+
+.panel-card{
+  background:var(--panel);
+  padding:12px;
+  border-radius:12px;
+  min-width:220px;
+  box-shadow:0 6px 18px rgba(0,0,0,0.5);
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+}
+
+.next-wrap{
+  display:flex;
+  gap:12px;
+  align-items:center;
+}
+
+.panel-title{
+  font-size:0.85rem;
+  color:var(--muted);
+  width:60px;
+}
+
+/* next canvas */
+#next{
+  background:#000;
+  border-radius:6px;
+  width:120px;
+  height:120px;
+  image-rendering: pixelated;
+  box-shadow: inset 0 0 0 2px rgba(255,255,255,0.02);
+}
+
+/* stats */
+.stats{
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+  font-size:0.95rem;
+  color:var(--white);
+}
+.message{
+  margin-top:6px;
+  min-height:20px;
+  color:#ffd27a;
+  font-weight:600;
+}
+
+/* buttons */
+.controls{
+  display:flex;
+  gap:8px;
+}
+.btn{
+  background:var(--btn);
+  color:var(--white);
+  border:none;
+  padding:8px 10px;
+  border-radius:8px;
+  cursor:pointer;
+  font-weight:600;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+}
+.btn:active{transform:translateY(1px)}
+.btn[aria-pressed="true"]{background:var(--btn-active)}
+
+/* mobile controller */
+.mobile-controller{
+  display:flex;
+  gap:8px;
+  justify-content:space-between;
+  margin-top:6px;
+}
+.control-btn{
+  flex:1;
+  background:linear-gradient(180deg,var(--btn),#111);
+  border:none;
+  color:var(--white);
+  padding:12px 6px;
+  border-radius:10px;
+  font-size:1.1rem;
+  font-weight:700;
+  user-select:none;
+  touch-action: manipulation;
+}
+.control-btn:active{
+  transform:translateY(1px) scale(0.995);
+  background:var(--btn-active);
+}
+
+/* hint */
+.hint{
+  color:var(--muted);
+  font-size:0.8rem;
+  margin-top:8px;
+}
+
+/* responsive */
+@media (max-width:720px){
+  .game-area{flex-direction:column;align-items:center;}
+  .side-panel{width:100%;justify-content:center;}
+  .panel-card{width:100%; max-width:360px;}
+  #stage{width:260px;height:520px}
+}
